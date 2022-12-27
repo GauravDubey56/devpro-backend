@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const router = require("./api/routes")
+global.db= require("./db/index").getContext();
+console.log(db)
 dotenv.config({ path: "./config.env" });
 const path = require("path");
 app.use(bodyParser.urlencoded({ extended: true }));

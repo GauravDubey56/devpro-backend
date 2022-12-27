@@ -4,6 +4,7 @@ const UserServices = new User();
 
 const Register = async (req, res) => {
   try {
+    console.log(await db('users'))
     const { email, mobile, fname, lname, password } = req.body;
     const createUser = await UserServices.insert({
       email,
